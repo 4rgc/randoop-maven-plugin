@@ -15,6 +15,7 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -71,7 +72,7 @@ public class RandoopMojo extends AbstractMojo {
     args.add(classPath);
     args.add("randoop.main.Main");
     args.add("gentests");
-    args.add("--timelimit=" + timeoutInSeconds);
+    args.add("--time-limit=" + timeoutInSeconds);
     args.add("--debug-checks=true");
     args.add("--junit-package-name=" + packageName);
     args.add("--junit-output-dir=" + targetDirectory);
@@ -96,6 +97,7 @@ public class RandoopMojo extends AbstractMojo {
       getLog().info("Randoop started with time limit of " + timeoutInSeconds + " seconds.");
       randoopProcess.waitFor(timeoutInSeconds + 3, TimeUnit.SECONDS);
       if (randoopProcess.exitValue() != 0) {
+        System.err.println(new String(randoopProcess.getInputStream().readAllBytes(), StandardCharsets.UTF_8));
         throw new MojoFailureException(this, "Randoop encountered an error!", "Failed to generate " +
             "test, exit value is " + randoopProcess.exitValue());
       }
