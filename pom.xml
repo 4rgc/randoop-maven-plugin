@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.4rgc</groupId>
+    <groupId>com.github.4rgc.randoop-maven-plugin</groupId>
     <artifactId>randoop-maven-plugin</artifactId>
     <version>${revision}</version>
     <packaging>maven-plugin</packaging>
@@ -20,7 +20,7 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.version>3.8.6</maven.version>
+        <maven.version>3.6.1</maven.version>
         <randoop-url>
             https://github.com/randoop/randoop/releases/download/v${revision}/randoop-all-${revision}.jar
         </randoop-url>
@@ -29,7 +29,7 @@
     <dependencies>
         <!-- only needed to make IDE happy -->
 <!--        <dependency>-->
-<!--            <groupid>randoop</groupid>-->
+<!--            <groupid>randoop</groupid>-->git
 <!--            <artifactid>randoop-all</artifactid>-->
 <!--            <version>${revision}</version>-->
 <!--            <scope>provided</scope>-->
