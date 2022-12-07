@@ -29,7 +29,7 @@
     <dependencies>
         <!-- only needed to make IDE happy -->
 <!--        <dependency>-->
-<!--            <groupid>randoop</groupid>-->git
+<!--            <groupid>randoop</groupid>-->
 <!--            <artifactid>randoop-all</artifactid>-->
 <!--            <version>${revision}</version>-->
 <!--            <scope>provided</scope>-->
